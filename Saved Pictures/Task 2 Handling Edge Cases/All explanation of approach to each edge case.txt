@@ -1,0 +1,64 @@
+Task 2: Handling Edge Cases in the Lead Management Workflow
+TechNova has identified a few key issues with their lead management process, and it's crucial to address these to ensure no valuable leads slip through the cracks. The issues are:
+
+Incomplete Information
+High-Value Leads Slipping Through
+Time Zone Handling
+Below, I'll explain how to modify the workflow to address these edge cases effectively.
+
+1. Handling Incomplete Data
+Problem: Some leads are entering the system with missing or incomplete information, which can affect scoring and subsequent actions.
+
+Solution: To handle incomplete data, the following steps can be added to the Zap workflow:
+
+Check for Missing Data: In the Zapier workflow, I will add a "Filter" action that checks if required fields (such as lead source, budget, interest level, etc.) are missing. If any critical field is empty, the lead will be flagged for follow-up and not processed further until completed.
+Notify Sales/Marketing Team: If any key information is missing, an automatic email alert can be sent to the sales or marketing team to reach out to the lead and request more details before proceeding with scoring and nurturing.
+Partial Data Workflow: If the missing data is not crucial (e.g., additional comments), it can be scored with partial points or skipped in scoring (depending on business rules). Alternatively, the incomplete lead can be placed in a separate "Pending" spreadsheet for follow-up before moving them into the main workflow.
+Zapier Action:
+
+Filter Action: Check for missing fields (like "Budget", "Industry", or "Timeline").
+Send Email Notification: Alert the team to follow up with the lead.
+2. Ensuring High-Value Leads Are Properly Managed
+Problem: Occasionally, high-value leads (those with a score above 70) are slipping through the cracks, possibly due to missed email automation or improper categorization.
+
+Solution: To ensure that high-value leads are properly managed, we can take the following actions:
+
+Immediate Follow-Up Email: Make sure that if the lead's score exceeds 70, a welcome email is sent automatically, regardless of any system delays. This email will contain personalized content that directly addresses their needs (based on form responses).
+Real-Time Alerts to Sales Team: In addition to sending the welcome email, a Slack notification or SMS alert (using Zapier’s Slack or Twilio integration) can be triggered to notify the sales team immediately when a high-value lead is identified. This ensures the team can take fast action on the lead.
+Tagging System: Add a tag or label (e.g., "High-Value Lead") to the Google Sheets record, making it easy for the sales team to identify and prioritize these leads.
+Review & Escalation: In case of critical leads (e.g., urgent budget, short timeline), set up an escalation workflow to assign the lead directly to senior sales representatives for immediate attention.
+Zapier Actions:
+
+Email Action: Send an immediate personalized email for high-value leads.
+Slack Notification Action: Notify the sales team of high-value leads in real-time.
+Google Sheets Update: Tag high-value leads in Google Sheets for easy identification.
+3. Accommodating Different Time Zones
+Problem: TechNova has leads from different time zones, and it's important to manage them in a way that aligns with their local time, especially when sending emails or making follow-up calls.
+
+Solution: To accommodate different time zones, the following adjustments will be made:
+
+Capture Time Zone in Form: Add a field in the Google Form to capture the lead's time zone or location. If not already part of the form, request this as part of the initial intake process.
+Adjust Email Send Time: Use Zapier's Delay by Zapier action to ensure that the welcome email or any follow-up is sent at the most appropriate time according to the lead's time zone (e.g., within business hours for their location).
+For example, if a lead is in New York (Eastern Time), set the email to go out around 9 AM local time, or delay it by a set number of hours until it aligns with the lead’s work hours.
+If leads are spread across various regions (e.g., Europe, Asia, etc.), use the time zone data to schedule emails to go out at the right time for each region.
+Time Zone Alerts: In addition to email automation, the sales team can be notified of the lead’s local time zone to avoid sending cold calls or messages at inappropriate hours.
+Zapier Actions:
+
+Capture Time Zone: Add a time zone field in Google Form responses.
+Delay by Zapier: Delay email actions based on lead's time zone to send messages at optimal times.
+Google Sheets Update: Include the time zone field in the lead sheet to easily track the lead's location.
+Updated Workflow Summary
+Lead submits a form with all required fields (and time zone included).
+Check for incomplete data: If data is missing, either notify the team or add the lead to a "Pending" list.
+Calculate lead score based on available data.
+If the lead is high-value (score above 70), send an immediate welcome email and trigger real-time alerts to the sales team. High-value leads are tagged in Google Sheets for follow-up.
+Time Zone Handling: If the lead has a time zone, the email is delayed to ensure it is sent during business hours in their region.
+If the lead is low- or medium-value (score below 70): Add to a nurturing campaign list or a separate nurturing Google Sheet.
+Continue to monitor and adjust workflows based on any future edge cases or insights.
+Deliverable
+Screenshot of the updated Zap: The screenshot would include the updated Zapier steps addressing:
+
+Filter for missing data.
+Slack/SMS notifications for high-value leads.
+Delay by time zone for email sending.
+Actions for incomplete or low-scoring leads.
