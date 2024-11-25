@@ -1,27 +1,41 @@
-Zapier Workflow Explanation
-Trigger: New Form Submission (Google Forms)
+Here is my brief explanation.
 
-What Happens: A new submission on the Google Form triggers the Zap.
-Why: This initiates the process of scoring the lead based on the criteria provided in the form.
-Action 1: Calculate Lead Score
+Referral: 20 points
+Organic Search: 15 points
+Social Media: 10 points
+Paid Ads: 5 points
+Industry:
 
-What Happens: Zapier will calculate the lead score by using a "Formatter" action to assign points based on the form data. A custom formula or if/then conditions in Zapier will be used to calculate the total score.
-Why: This step ensures that each lead gets a score based on their input.
-Action 2: Add Lead to Google Sheets
+SaaS: 30 points
+E-commerce: 25 points
+Health Tech: 20 points
+Other: 10 points
+Job Title:
 
-What Happens: The lead’s details and their calculated score will be added to a Google Sheet in a "Leads" spreadsheet.
-Why: Storing leads in a Google Sheet allows for easy tracking and further actions like segmenting leads based on their score.
-Action 3: Send Welcome Email (for high-value leads)
+CEO/Founder: 25 points
+Director/VP: 20 points
+Manager: 15 points
+Staff: 10 points
+Interest Level:
 
-What Happens: If the lead score is above 70, a welcome email is automatically sent via Gmail, welcoming them and providing additional information.
-Why: A high-value lead receives immediate attention to increase the chances of conversion.
-Action 4: Add Row to Nurturing Spreadsheet (for low and medium leads)
+Highly Interested: 30 points
+Somewhat Interested: 20 points
+Not Interested: 5 points
+Budget:
 
-What Happens: If the lead score is below 70, Zapier will add the lead’s information to a separate "Nurturing" Google Sheets spreadsheet.
-Why: Low- and medium-value leads are added to a nurturing list for further engagement via email campaigns, calls, or other marketing strategies.
-Screenshot of Completed Zap
-This will include:
-Google Forms Trigger: New form submission event.
-Lead Scoring Calculation: Using Zapier's Formatter tool to assign points based on the answers.
-Google Sheets Actions: Adding leads to either the high-value or nurturing sheet depending on the score.
-Email Action: Sending a welcome email for leads above 70 points.
+High (over $50K): 40 points
+Medium ($10K - $50K): 25 points
+Low (below $10K): 10 points
+Timeline:
+
+Urgent (within 1 month): 30 points
+Medium (1-3 months): 20 points
+Long-term (3+ months): 10 points
+Total Score Calculation:
+
+The lead's total score is the sum of the points from each of the criteria. For example, if a lead is highly interested, comes from a referral, and is in the SaaS industry, the score would be:
+30 (Interest) + 20 (Source) + 30 (Industry) = 80 points.
+Lead Scoring Ranges:
+70-100 points: High-value leads (target immediately with welcome emails)
+40-69 points: Medium-value leads (nurture)
+0-39 points: Low-value leads (may require more engagement)
